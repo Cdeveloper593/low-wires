@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#24193B" />
+  <title>Low Wires</title>
+  <style>
+    :root, .sw-root {
+      --sw-bg: #24193B;
+      --sw-ink: #C1B1B4;
+      --sw-ink-soft: #A1A3BA;
+      --sw-accent: #A6629D;
+      --sw-font-display: Georgia, serif;
+      --sw-font-body: system-ui, sans-serif;
+    }
+    body { margin: 0; background: var(--sw-bg); }
+    .sw-scrollbar, .sw-particles, .sw-hint, .sw-copy__num { display: none; }
+    .sw-topcta, .sw-root.sw-night .sw-topcta, .sw-copy .sw-btn--primary {
+      background: var(--sw-ink);
+      color: var(--sw-bg);
+    }
+    .sw-copy__eyebrow {
+      color: var(--sw-ink);
+      font-family: ui-monospace, monospace;
+      font-variant-numeric: tabular-nums;
+      margin-top: 0;
+    }
+    .sw-copy--dark::before {
+      background: radial-gradient(ellipse, var(--sw-bg), transparent 70%);
+    }
+    .sw-root .sw-route__label {
+      color: var(--sw-ink);
+      background: var(--sw-bg);
+    }
+    .sw-route::before { width: 1px; }
+    .sw-route__dot:focus-visible .sw-route__label {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 801px) {
+      .sw-copy {
+        left: auto;
+        right: clamp(65px, 8vw, 128px);
+        top: auto;
+        bottom: clamp(32px, 8vh, 96px);
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+  <div id="finale"></div>
+  <noscript><img src="assets/scene1.webp" alt="The Rooftop" style="display:block;width:100%;" /></noscript>
+  <script src="scrub-engine.js"></script>
+  <script>
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'Low Wires', href: '#top' },
+      cta: { label: 'Start your world', href: '#finale' },
+      nav: false,
+      atmosphere: false,
+      crossfade: 0.08,
+      sections: [
+        {
+          id: 'rooftop', label: 'The Rooftop', dark: true,
+          still: 'assets/scene1.webp', clip: 'assets/vid/scene1.mp4',
+          eyebrow: '04:48', title: 'The washing can wait.',
+          body: 'I leave the pink sheet on its two pegs and go down for tea.',
+          scroll: 1.80, linger: 0.40,
+        },
+        {
+          id: 'stairs', label: 'Down the Stairs', dark: true,
+          still: 'assets/scene2.webp', clip: 'assets/vid/scene2.mp4',
+          eyebrow: '04:49', title: 'He gets the whole step.',
+          body: 'I turn sideways between the pots so the tabby can keep sleeping.',
+          scroll: 1.20, linger: 0.10,
+        },
+        {
+          id: 'street', label: 'The Quiet Street', dark: true,
+          still: 'assets/scene3.webp', clip: 'assets/vid/scene3.mp4',
+          eyebrow: '04:51', title: 'I know that hum.',
+          body: 'Three bicycles down, I can still hear the vending machine.',
+          scroll: 1.40, linger: 0.20,
+        },
+        {
+          id: 'store', label: 'The Convenience Store', dark: true,
+          still: 'assets/scene4.webp', clip: 'assets/vid/scene4.mp4',
+          eyebrow: '04:53', title: 'Too hot for one hand.',
+          body: 'A second paper cup slides under the first before I can ask.',
+          scroll: 1.60, linger: 0.30,
+        },
+        {
+          id: 'bridge', label: 'The River Bridge', dark: true,
+          still: 'assets/scene5.webp', clip: 'assets/vid/scene5.mp4',
+          eyebrow: '04:55', title: 'I see it twice.',
+          body: 'A star slips past the rail, whole in the sky and in pieces on the water.',
+          scroll: 1.90, linger: 0.45,
+        },
+        {
+          id: 'finale', label: 'Rooftop at Dawn', dark: true,
+          still: 'assets/scene6.webp', clip: 'assets/vid/scene6.mp4',
+          eyebrow: '05:00', title: 'One more minute.',
+          body: 'Back on my bit of wall, the tea is just cool enough to drink.',
+          scroll: 2.00, linger: 0.50,
+          cta: { primary: { label: 'Start your world', href: 'https://cerium-web-development.vercel.app/' } },
+        },
+      ],
+      connectors: [],
+    });
+  </script>
+</body>
+</html>
